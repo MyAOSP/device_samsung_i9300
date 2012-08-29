@@ -1,4 +1,5 @@
 # Copyright 2006 The Android Open Source Project
+ifeq ($(TARGET_DEVICE),i9300)
 
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
@@ -13,10 +14,12 @@ LOCAL_SHARED_LIBRARIES := \
     libcutils \
     libhardware_legacy
 
-LOCAL_CFLAGS := 
+LOCAL_CFLAGS :=
 
 LOCAL_MODULE:= libsecril-client
 LOCAL_PRELINK_MODULE := false
 LOCAL_LDLIBS += -lpthread
 
 include $(BUILD_SHARED_LIBRARY)
+
+endif
